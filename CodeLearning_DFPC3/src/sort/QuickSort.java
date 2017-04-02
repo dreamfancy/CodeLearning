@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class QuickSort {
 
+	/*
 	//Standard Solution from web
 	public int[] quickSort(int[] arr, int left, int right)
 	{
@@ -61,5 +62,5 @@ public class QuickSort {
 		arr[first] = arr[second];
 		arr[second] = temp;
 	}
-	
+	*/
 }
