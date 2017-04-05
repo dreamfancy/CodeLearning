@@ -3,7 +3,7 @@ package linkedList;
 public class ReverseLinkedList_206 {
 
 	
-	public ListNode reverseLinkedListByRecursive(ListNode head)
+	public ListNode reverseLinkedListByIterator(ListNode head)
 	{
 		if(head == null || head.next==null) return head;
 
@@ -12,7 +12,7 @@ public class ReverseLinkedList_206 {
 	
 	
 	
-	//Iterater by two pointer
+	//Iterator by two pointer
 	public ListNode reverseLinkedList(ListNode head)
 	{
 		ListNode first = head;
@@ -27,6 +27,16 @@ public class ReverseLinkedList_206 {
 			second = third;
 		}
 		 return first;
+	}
+	
+	//Recursive
+	public ListNode reverseLinkedListByRecursive(ListNode head)
+	{
+		if(head==null || head.next==null) return head;
+		ListNode newHead = reverseLinkedListByRecursive(head.next);
+		head.next.next= head;
+		head.next = null;
+		return newHead;
 	}
 	
 }
