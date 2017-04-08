@@ -14,19 +14,19 @@ public class SortList_148 {
     {
     	ListNode mid = findMidPoint(head,end);
     	ListNode firstHalf = mergesortList(head,mid);
-    	ListNode secondHalf = mergesortList(mid.next,null);
+    	ListNode secondHalf = mergesortList(mid.next,end);
     	
-    	return mergeList(firstHalf,secondHalf);
+    	return mergeList(firstHalf,mid,end);
     	
     }
-    public ListNode mergeList(ListNode firstHalf, ListNode secondHalf)
+    public ListNode mergeList(ListNode start, ListNode mid, ListNode end)
     {
-    	ListNode p1 = firstHalf;
-    	ListNode p2 = secondHalf;
+    	ListNode p1 = start;
+    	ListNode p2 = mid.next;
     	
     	ListNode dummyNode = new ListNode(0);
     	ListNode cur = dummyNode;
-    	while(p1!=null && p2!=null)
+    	while(p1!=mid && p2!=end)
     	{
     		if(p1.val<p2.val)
     		{
@@ -39,12 +39,12 @@ public class SortList_148 {
     			p2 = p2.next;
     		}
     	}
-    	while(p1!=null)
+    	while(p1!=mid)
     	{
 			cur.next = p1;
 			p1 = p1.next;
     	}
-    	while(p2!=null)
+    	while(p2!=end)
     	{
     		cur.next = p2;
     		p2 = p2.next;
