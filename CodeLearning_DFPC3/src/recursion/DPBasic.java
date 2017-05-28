@@ -9,7 +9,7 @@ public class DPBasic {
 	public static long fibseq(int n)
 	{
 		if(n<=-1) return -1;
-		else if (n<=1) return n;
+		if (n<=1) return n;
 		
 		int cur = 2;
 		int val= 1;

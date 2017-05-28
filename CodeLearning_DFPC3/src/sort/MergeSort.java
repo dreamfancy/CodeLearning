@@ -12,7 +12,7 @@ public class MergeSort {
 	//Time Complexity: O(nlogn):(O(n)+O(nlogn)
 	//Space Complexity:
 	//IF using ArrayList as storage: O(nlogn)
-	//IF using Array as storage: O(n)
+	//IF using Array as storage: O(n) BUT It needs a helper array. Please check the leture 3 1:53
 	
 	public ArrayList<Integer> divideAndMerge(ArrayList<Integer> list, int left, int right)
 	{

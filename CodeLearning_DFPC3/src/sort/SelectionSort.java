@@ -17,7 +17,7 @@ public class SelectionSort {
 			{
 				if(arr[j]<arr[minInd])
 				{
-					arr[minInd] = arr[j];
+					//arr[minInd] = arr[j];
 					minInd=j;
 				}
 			}

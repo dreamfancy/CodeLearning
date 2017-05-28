@@ -2,31 +2,72 @@ package linkedList;
 
 public class InsertionSortList_147 {
 
+	//Extention for this question: How to insert a node to a sorted LinkedList
+	
+	public ListNode insert(ListNode head, int target)
+	{
+		ListNode cur = new ListNode(target);
+		if(head==null ||head.val>=target)
+		{
+			cur.next = head;
+			return cur;
+		}
+		while(head.next!=null)
+		{
+			if(head.next !=null && head.next.val<target) head = head.next;
+			//In any case for LinkedList, please consider the fact that the end of
+			//the ListNode is null
+			else
+			{
+				cur.next = head.next;
+				head.next = cur;
+			}
+		}
+		return head;
+	}
+	
 	
 	//Solution 1: Consider LinkedList update always to create a new LinkedList
-	//Think in an opposite way!
+	//Think in an opposite way! Most times Linkedlist needs reconstruction! Use
+	//a dummy node to construct a new LinkedList
     public ListNode insertionSortList(ListNode head) 
     {
     	ListNode dummy = new ListNode(0);
+    	
     	while(head!=null)
     	{
-    		ListNode node =dummy;
+    		ListNode node = dummy;
     		while(node.next!=null && node.next.val<head.val)
     		{
     			node = node.next;
     		}
-    
     		ListNode temp = head.next;
     		head.next = node.next;
     		node.next = head;
     		head = temp;
-    	} 	
+    	}
     	return dummy.next;
     }
 	
 	
 	
-	
+	/*
+	ListNode dummy = new ListNode(0);
+	while(head!=null)
+	{
+		ListNode node =dummy;
+		while(node.next!=null && node.next.val<head.val)
+		{
+			node = node.next;
+		}
+
+		ListNode temp = head.next;
+		head.next = node.next;
+		node.next = head;
+		head = temp;
+	} 	
+	return dummy.next;
+	*/
 	
 	//Solution 2: Consider LinkedList as an Array and use the solutions of 
 	//an array: Use swap

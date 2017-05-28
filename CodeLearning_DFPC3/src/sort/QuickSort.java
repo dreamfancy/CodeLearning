@@ -11,13 +11,22 @@ public class QuickSort {
 		
 	}
 	
+	*/
 	
-	//My Solution
 	public int[] quickSort(int[] arr, int left, int right)
 	{
 		if(arr==null ||arr.length==0) return arr;
 		if(right<left) return null;
 		if(left==right) return arr;
+		if(left==right-1)
+		{
+			if(arr[left]<=arr[right]) return arr;
+			else
+			{
+				swap(arr,left,right);
+				return arr;
+			}
+		}
 		//Always choose the medium one
 		int mid = left + (right-left)/2;
 		swap(arr,mid,right);
@@ -62,5 +71,5 @@ public class QuickSort {
 		arr[first] = arr[second];
 		arr[second] = temp;
 	}
-	*/
+	
 }

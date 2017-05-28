@@ -22,7 +22,7 @@ public class LinkedListCycle_141
 	}
 	
 	
-	
+	//Any LinkedList please pay attention that the end element's next is NULL!
 	
 	//Solution_1 use HashSet to record repeat
     public static boolean hasCycle_UseHashSet(ListNode head) 
