@@ -54,7 +54,7 @@ public class ReorderList_143 {
 		while(cur!=null)
 		{	
 			temp = cur.next;
-			cur.next = node;			
+			cur.next = pre;			
 			pre = cur;
 			cur = temp;
 		}

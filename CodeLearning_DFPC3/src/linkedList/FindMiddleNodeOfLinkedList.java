@@ -20,5 +20,5 @@ public class FindMiddleNodeOfLinkedList {
 	
 	//Another solution :add dummy node. see lecture 4: 28:30
 	
-
+  
 }

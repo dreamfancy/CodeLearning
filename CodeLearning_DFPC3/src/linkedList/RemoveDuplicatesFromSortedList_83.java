@@ -4,10 +4,10 @@ public class RemoveDuplicatesFromSortedList_83
 {
     public ListNode deleteDuplicates(ListNode head) 
     {
-    	if(head==null || head.next==null) return head;
+    	//if(head==null || head.next==null) return head;
     	
     	ListNode first = head;
-    	while(first.next!=null)
+    	while(first!=null)
     	{
     		while(first.next!=null && first.next.val==first.val)
     		{
@@ -15,6 +15,7 @@ public class RemoveDuplicatesFromSortedList_83
     		}
     	
     		first = first.next;
+    		
     	}
     	
     	return head;

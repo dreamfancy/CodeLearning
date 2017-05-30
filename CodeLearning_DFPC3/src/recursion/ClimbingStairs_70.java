@@ -37,6 +37,7 @@ public class ClimbingStairs_70 {
     }
     
     //DP solution Use hash
+    //ATT: This hash can be changed to array because we only want to  
     public static int climbStairs_DP_Hash(int n) {
 
         if(n==1 || n==0) return 1;

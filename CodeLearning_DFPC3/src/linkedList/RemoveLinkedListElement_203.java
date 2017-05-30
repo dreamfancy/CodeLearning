@@ -1,5 +1,10 @@
 package linkedList;
 
+
+
+//Two way of delete
+//203: change reference
+//207 change the value of previous node to the new one
 public class RemoveLinkedListElement_203 
 {
 	
