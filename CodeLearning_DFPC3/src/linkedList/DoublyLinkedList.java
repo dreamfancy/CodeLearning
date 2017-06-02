@@ -16,10 +16,10 @@ public class DoublyLinkedList {
 			size = 0; 
 		}
 		
-		public int getSize(int index)
-		{
+		//public int getSize(int index)
+		//{
 
-		}
+		//}
 		
 		public ListNodeT get(int index)
 		{
