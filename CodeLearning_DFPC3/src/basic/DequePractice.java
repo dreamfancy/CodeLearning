@@ -1,20 +1,8 @@
 package basic;
 
-/*
- Queue Interface Structure:
-Type of Action 		Throws exception       Returns Special Value
- 	Insert               add                      offer
-    Remove               remove                   poll
-    Examine              element 				  peek
-
-Queue is an interface. We can use LinkedList as instance.
- */
-
-
-
-import java.util.LinkedList;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.PriorityQueue;
-import java.util.Queue;
 
 public class DequePractice {
 
@@ -29,34 +17,32 @@ public class DequePractice {
 		System.out.println(q.peek());
 		System.out.println(q.poll());
 		
-
-		
 		
 	}
 
 	
 	
 	//public static void main(String[] args)
-	public static void queuePractice()
+	public static void dequePractice()
 	{
-		Queue q1 = new LinkedList();
-		q1.add(null);
-		q1.add(2);
-		q1.offer(3);
-		System.out.println(q1.element());
-		System.out.println(q1.peek());
-		System.out.println(q1.remove());
-		System.out.println(q1.poll());
-		System.out.println(q1.poll());
-		System.out.println(q1.poll());
-		System.out.println(q1.peek());
-	//	System.out.println(q1.element());
+		//Queue is on default to add from last and poll from first
+		Deque dq = new ArrayDeque();
+		dq.addFirst(1);
+		System.out.println(dq.peek());
+		dq.addFirst(2);
+		System.out.println(dq.peek());
+		dq.addLast(3);
+		System.out.println(dq.removeFirst());
+		System.out.println(dq.removeLast());
+
+
 	}
 	
 	public static void main(String[] args)
 	{
 		//queuePractice();
-		priorityQueuePractice();
+		System.out.println(11);
+		dequePractice();
 	}
 	
 }

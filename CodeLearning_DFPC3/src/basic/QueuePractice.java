@@ -52,10 +52,13 @@ public class QueuePractice {
 	//	System.out.println(q1.element());
 	}
 	
+	/*
+	
 	public static void main(String[] args)
 	{
 		//queuePractice();
 		priorityQueuePractice();
 	}
+	*/
 	
 }

@@ -1,5 +1,7 @@
 package tree;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
@@ -49,6 +51,25 @@ public class PreorderTraversal_144 {
     
     public List<Integer> preorderTraversal_Iteration_Deque(TreeNode root, List<Integer> li)
     {
+    	if(root == null) return li;
+    	TreeNode cur = root;
+    	//li.add(cur.val);
+  
+    	Deque<TreeNode> s_nodes  = new ArrayDeque<TreeNode>();
+    	s_nodes.push(cur);
+    	while(!s_nodes.isEmpty()) //Stack has Empty(), others are all isEmpty()?
+    	{
+    		TreeNode c = s_nodes.removeLast();
+    		li.add(c.val);
+    		if(c.right!=null) s_nodes.addLast(c.right);
+    		if(c.left!=null) s_nodes.addLast(c.left);
+    	}
     	
+    	return li;
     }
+    
+    //For the iteration_deque solution, we can also change it to linkedlist. In other word,
+    //LinkedList API also provides addFirst(E), addLast(E), contains(), getFirst(), getLast(),
+    //offerFirst(),offerLast(),peek(),peekFirst(),peekLast() .etc.
+    
 }
