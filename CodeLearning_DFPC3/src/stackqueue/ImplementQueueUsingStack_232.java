@@ -1,4 +1,4 @@
-package StackQueue;
+package stackqueue;
 
 public class ImplementQueueUsingStack_232 
 {
