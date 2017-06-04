@@ -1,4 +1,4 @@
-package tree;
+ package tree;
 
 
 //Binary Tree: For every node, at most two children, without cycle ->DAG
@@ -18,6 +18,8 @@ package tree;
 //greater than one
 
 //PreOrder: Read a root first!
+ 
+ //Binary Search Tree: How to Verify: When you are traversing the tree by in order, it is always ascending
 
 public class TreeNode {
 	int val;

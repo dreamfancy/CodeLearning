@@ -1,6 +1,7 @@
 package tree;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,6 +28,29 @@ public class PreorderTraversal_144 {
         return li;
     }
 
+    //standard solution for iteration
+    public List<Integer> preorderTraversal_standard(TreeNode root)
+    {
+    	List<Integer>  ans = new ArrayList<Integer>();
+    	if(root ==null) return ans;
+    	Stack<TreeNode> st = new Stack<TreeNode>();
+    	while(root!=null || !st.isEmpty())
+    	{
+    		if(root==null) 
+    		{
+    			root = st.pop();
+    			root = root.right;
+    		}
+    		else
+    		{
+    			st.push(root);
+    			ans.add(root.val);
+    			root = root.left;
+    		}
+    	}
+    	return ans;
+    }
+    
     //For Preorder, the left nodes have priority than any right nodes, even the parents' right node, 
     //then we can think that stack is a good structure to do this because the latest in stack can pop up earlier
     //(than their parents)
