@@ -10,7 +10,7 @@ public class MinDepthBT_111 {
 	    return cur;
 	    
 	    //!!!See how to make it easy
-	    //return (left==0 || right==0) ? left+right+1 : Math.min(minDepth(root.left),minDepth(root.right))+1
+	    //return (leftHeight==0 || rightHeight==0) ? leftHeight+rightHeight+1 : Math.min(minDepth(root.left),minDepth(root.right))+1;
 	    //return (root.left==null)?(minDepth(root,right)+1):((root.right==null)?(minDepth(root,right)+1):(Math.min(minDepth(root.left),minDepth(root.right))+1))
     }
 }

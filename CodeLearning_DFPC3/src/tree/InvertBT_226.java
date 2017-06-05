@@ -27,5 +27,5 @@ public class InvertBT_226 {
 		   root.right = left;
 		   
 		   return root;
-	    }
+	       }
 }

@@ -90,7 +90,6 @@ public class InOrderTraversal_94 {
     		{
     			root = st.pop();
     			ans.add(root.val);
-
     			root = root.right;
     		}
     		else
