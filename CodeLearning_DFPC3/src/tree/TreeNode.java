@@ -21,6 +21,8 @@
  
  //Binary Search Tree: How to Verify: When you are traversing the tree by in order, it is always ascending
 
+ 
+ // O(4^logn) -> O(n^2)
 public class TreeNode {
 	int val;
 	TreeNode left;

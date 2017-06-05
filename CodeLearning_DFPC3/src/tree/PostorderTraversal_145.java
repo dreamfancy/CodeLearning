@@ -16,7 +16,7 @@ public class PostorderTraversal_145 {
     	List<Integer>  ans = new ArrayList<Integer>();
     	if(root ==null) return ans;
     	Stack<TreeNode> st = new Stack<TreeNode>();
-    	while(root!=null || !st.isEmpty())
+    	while(root!=null || !st.isEmpty()) //Remember and Revisit!
     	{
     		if(root==null) 
     		{
