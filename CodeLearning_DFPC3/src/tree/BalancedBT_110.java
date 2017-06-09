@@ -12,7 +12,7 @@ public class BalancedBT_110 {
 		
 	}
 	
-    private int getHeightIfBalanced(TreeNode root) {
+    private  int getHeightIfBalanced(TreeNode root) {
 	    if(root==null) return 0;
 	    int leftHeight = getHeightIfBalanced(root.left);
 	    int rightHeight = getHeightIfBalanced(root.right);
