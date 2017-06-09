@@ -45,11 +45,14 @@ public class ValidateBST_98 {
     	
     	return true;
     } 
+    
+    /*
     private int inorderTraverse(TreeNode root)
     {
     	int left = inorderTraverse(root.left,root.val);
     	if(left>=root.val)
     }
  
+     */
 
 }
