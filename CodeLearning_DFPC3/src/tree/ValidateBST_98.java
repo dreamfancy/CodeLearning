@@ -74,7 +74,7 @@ public class ValidateBST_98 {
     		this.right = right;
     	}
     }
-    
+
     public boolean isValidBST_ReconstructTreeNode(TreeNode root) 
     {
         if(root == null)
@@ -178,7 +178,7 @@ public class ValidateBST_98 {
         return divConq(root.left, min, Math.min(max, root.val)) && 
                 divConq(root.right, Math.max(min, root.val), max);
     }
-    
+
 }
 
 
