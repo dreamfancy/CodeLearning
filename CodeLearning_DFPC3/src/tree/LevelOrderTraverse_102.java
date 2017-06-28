@@ -64,7 +64,7 @@ public class LevelOrderTraverse_102 {
     }
     
 	//Solution 2: Use two queue to to cut off where to create a new list
-    public List<List<Integer>> levelOrder(TreeNode root) 
+    public List<List<Integer>> levelOrder_2(TreeNode root) 
     {
     	
     	List<List<Integer>> arrLists = new ArrayList<List<Integer>>();
@@ -76,30 +76,27 @@ public class LevelOrderTraverse_102 {
 		arrLists.add(rootList);
 		while(!q.isEmpty())
 		{
-			List<Integer> list= new ArrayList<Integer>();
-			while(!q.isEmpty())
-			{	
+			
+			List<Integer> list = new ArrayList<Integer>();
+			for(int i=0; i<q.size(); i++)
+			{
 				TreeNode curNode = q.poll();
+			
 				if(curNode.left!=null)
 				{
+					q.offer(curNode.left);
 					list.add(curNode.left.val);
 				}
 				if(curNode.right!=null)
 				{
+					q.offer(curNode.right);
 					list.add(curNode.right.val);
 				}
 			}
-			if(!list.isEmpty())
-			{
-				for(int i: list)
-				{
-					q.offer(i);
-				}
-				arrLists.add(list);
-			}
+			arrLists.add(list);
 		}
-    	return arrLists;
-    
+
+    	return arrLists;    
 
     }
 }
