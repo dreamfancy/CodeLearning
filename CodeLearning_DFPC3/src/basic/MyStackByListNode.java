@@ -1,11 +1,11 @@
 package basic;
 
-public class MyStack<T> 
+public class MyStackByListNode<T> 
 {
 	//fields
 	private ListNode<T> head = null;
 	
-	public MyStack()
+	public MyStackByListNode()
 	{
 		head = null;
 	}

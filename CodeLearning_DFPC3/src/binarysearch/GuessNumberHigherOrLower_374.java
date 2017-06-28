@@ -1,4 +1,4 @@
-package binarysearch;
+ package binarysearch;
 
 public class GuessNumberHigherOrLower_374 {
 

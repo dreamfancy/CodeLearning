@@ -1,12 +1,12 @@
 package basic;
 
 //Use Double Direction ListNode
-public class MyQueue<T> 
+public class MyQueueByListNode<T> 
 {
 	private ListNode<T> head;
 	private ListNode<T> tail;
 	
-	public MyQueue()   //Class level we have already declared <T>, so it is not necessary to declare again at constructor or any methods
+	public MyQueueByListNode()   //Class level we have already declared <T>, so it is not necessary to declare again at constructor or any methods
 	{
 		head = null;
 		tail = null;

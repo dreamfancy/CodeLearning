@@ -25,7 +25,7 @@ public class DequePractice {
 	//public static void main(String[] args)
 	public static void dequePractice()
 	{
-		//Queue is on default to add from last and poll from first
+		//Deque is on default to add from last and poll from first
 		Deque dq = new ArrayDeque();
 		dq.addFirst(1);
 		System.out.println(dq.peek());
