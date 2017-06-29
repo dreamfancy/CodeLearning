@@ -64,6 +64,7 @@ public class LevelOrderTraverse_102 {
     }
     
 	//Solution 2: Use two queue to to cut off where to create a new list
+    // Use for loop to control the number of process 
     public List<List<Integer>> levelOrder_2(TreeNode root) 
     {
     	
@@ -78,7 +79,8 @@ public class LevelOrderTraverse_102 {
 		{
 			
 			List<Integer> list = new ArrayList<Integer>();
-			for(int i=0; i<q.size(); i++)
+			int curQSize = q.size();
+			for(int i=0; i<curQSize; i++)
 			{
 				TreeNode curNode = q.poll();
 			
@@ -93,7 +95,13 @@ public class LevelOrderTraverse_102 {
 					list.add(curNode.right.val);
 				}
 			}
-			arrLists.add(list);
+			
+			//If after for loop, the result is still an empty, it means that the last level has done in previous loop, 
+			//this level means the traverse of the null children of the last level. It needs to delete.
+			if(!list.isEmpty())
+			{
+				arrLists.add(list);
+			}
 		}
 
     	return arrLists;    
