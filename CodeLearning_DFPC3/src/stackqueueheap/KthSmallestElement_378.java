@@ -41,48 +41,51 @@ public class KthSmallestElement_378
     		}
     	});
     	
-    	HashSet<Node> visited = new HashSet<Node>();
+    	HashSet<Integer> visited = new HashSet<Integer>();
     	
     	int i=0,j=0;
     	pq.offer(new Node(i,j,matrix[i][j]));
-    	int count = 1;
+    	visited.add(0);
+    	int count = 0;
+        Node cur = null;
     	while(!pq.isEmpty() && count<k )
     	{
-    		Node cur = pq.poll();
-            count--;
+    		cur = pq.poll();
+            count++;
+            
+            System.out.println("current count is " + count);
+            
     		if(cur.i<matrix.length-1)
     		{
     			Node add1 = new Node(cur.i+1,cur.j,matrix[cur.i+1][cur.j]);
-    			if(!visited.contains(add1))
+    			int hash1 = (cur.i+1) * (matrix[0].length) + cur.j;
+                boolean signal1 = visited.contains(hash1);
+                System.out.println(signal1); 
+    			if(!visited.contains(hash1))
     			{
     				pq.offer(add1);
-    				visited.add(add1);
-    				System.out.println("i"+(cur.i+1) + "  j: "+cur.j + "  "+ matrix[cur.i+1][cur.j]);
-    				count++;
+        			visited.add(hash1);
+    				System.out.println("i "+(cur.i+1) + "  j: "+cur.j + "  "+ matrix[cur.i+1][cur.j]);
     			}
     		}
     		if(cur.j<matrix[0].length-1)
     		{
 				Node add2 = new Node(cur.i,cur.j+1,matrix[cur.i][cur.j+1]);
-    			if(!visited.contains(add2))
+    			int hash2 = cur.i * (matrix[0].length) + cur.j + 1;
+                boolean signal2 = visited.contains(hash2);
+                System.out.println(signal2); 
+    			if(!visited.contains(hash2))
     			{
     				pq.offer(add2);
-    				visited.add(add2);
-    				System.out.println("i"+cur.i + "  j: "+(cur.j+1) + "  "+ matrix[cur.i][cur.j+1]);
-    				count++;
+        			visited.add(hash2);
+    				System.out.println("i    "+cur.i + "  j: "+(cur.j+1) + "  "+ matrix[cur.i][cur.j+1]);
     			}
     		}
            
     	}
     	
-    	return pq.poll().val;
+        System.out.println("final count is" + count);
+    	return cur.val;
     	
     }
-    
-    public static void main(String[] args)
-    {
-    	
-    }
-	
-	
 }

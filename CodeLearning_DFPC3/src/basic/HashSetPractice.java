@@ -19,6 +19,5 @@ public class HashSetPractice {
 		System.out.println(hash.contains(p1));
 		System.out.println(hash.contains(p2));
 		System.out.println(hash.contains(p3));
-
 	}
 }
