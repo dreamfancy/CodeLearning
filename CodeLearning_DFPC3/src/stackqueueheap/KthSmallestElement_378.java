@@ -4,14 +4,65 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.PriorityQueue;
 
-//Time: O(klogk)
-//Space O(k)
-
-
-
 
 public class KthSmallestElement_378 
 {
+
+	//Solution 2: find middle value through count then see the position
+	
+	public int kthSmallest_BinarySearchValue(int[][] matrix, int k)
+	{
+		int lower = matrix[0][0];
+		int upper = matrix[matrix.length-1][matrix[0].length-1];
+		
+		//while(lower+1<upper)
+		while(lower<upper)
+		{
+			int mid = lower + (upper-lower)/2;
+			int count = count(matrix,mid);
+			
+			/*
+			//if(count==k) return mid;
+			//Wrong!!! Why it is wrong, because the mid may not exist
+			else if(count<k)
+			{
+				lower = mid + 1;
+			}
+			else
+			{
+				upper = mid - 1;
+			}
+			*/
+	        if(count<k){
+	            lower=mid+1;
+	        }else{
+	            upper=mid;
+	        }
+	    }
+	 
+	    return upper;
+	}
+
+	
+	public int count(int[][] matrix, int target)
+	{
+		int i = matrix.length-1;
+		int j=0;
+		int count = 0;
+		while(i>=0 && j<=matrix[0].length-1)
+		{
+			if(matrix[i][j]>target)
+			{
+				i--;
+			}
+			else
+			{
+				count += i+1;
+				j++;
+			}
+		}
+		return count;
+	}
 	
 	class Node
 	{
@@ -27,9 +78,12 @@ public class KthSmallestElement_378
 		{
 			return (i==((Node)n).i && j==((Node)n).j);
 		}
-	}
+	}	
 	
-    public int kthSmallest(int[][] matrix, int k) 
+	//Solution 1: Use priority queue get the minimum every one time
+	//Time: O(klogk)
+	//Space: O(k)
+    public int kthSmallest_1(int[][] matrix, int k) 
     {
     	if(k<=0 || k>matrix.length * matrix[0].length) return -1;
     	
@@ -83,9 +137,7 @@ public class KthSmallestElement_378
     		}
            
     	}
-    	
         System.out.println("final count is" + count);
     	return cur.val;
-    	
     }
 }
