@@ -5,7 +5,46 @@ import java.util.List;
 
 public class Subsets_78 
 {
-    public List<List<Integer>> subsets(int[] nums) 
+	
+	
+	//Solution 3: Iteration For DFS
+    public List<String> subsets_3(char[] array,StringBuilder sol, int index, List<String> result)
+    {
+    	if(index==array.length)
+    	{
+    		result.add(sol.toString());
+    		return result;
+    	}
+    	sol.append(array[index]);
+    	subsets_2(array,sol,index+1,result);
+    	sol.deleteCharAt(sol.length()-1);
+    	subsets_2(array,sol,index+1,result); 
+    	
+    	return result;
+    }
+	
+	//Solution 2: Recursion For DFS  
+    public List<String> subsets_2(char[] array,StringBuilder sol, int index, List<String> result)
+    {
+    	result.add(sol.toString());
+    	
+    	for(int i=index; i<array.length; i++)
+    	{
+    		sol.append(array[i]);
+    		subsets_2(array,sol,i+1,result);
+    		sol.deleteCharAt(sol.length()-1);
+    	}
+    	
+    	
+    	return result;
+    }
+	
+	
+	
+	
+	
+	//Solution 1: Copy the set in synchronizingly
+    public List<List<Integer>> subsets_1(int[] nums) 
     {
     	//List<List<Integer>> result = new ArrayList<List<Integer>>();
     	List<List<Integer>> curSol = new ArrayList<List<Integer>>();
