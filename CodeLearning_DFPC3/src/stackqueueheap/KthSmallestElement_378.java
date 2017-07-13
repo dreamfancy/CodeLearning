@@ -51,7 +51,7 @@ public class KthSmallestElement_378
 		int count = 0;
 		while(i>=0 && j<=matrix[0].length-1)
 		{
-			if(matrix[i][j]>target)
+			if(matrix[i][j]>target)   //Revisit!!!Why there is no matrix[i][j] == target!
 			{
 				i--;
 			}
