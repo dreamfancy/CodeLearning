@@ -4,17 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CombinationSum_39 
-{
-	
-	
-	//Solution 1: DFS each level is for one number
+public class CombinationSum_2_40 {
     public List<List<Integer>> combinationSum(int[] candidates, int target) 
     {
     	List<List<Integer>> res = new ArrayList<List<Integer>>();
     	if(candidates==null || candidates.length==0 || target<=0) return res;
     	List<Integer> curRes = new ArrayList<Integer>();
     	Arrays.sort(candidates);
+    	
     	helper(candidates,0,0,target,curRes,res);
 		return res;	
     }
@@ -52,18 +49,7 @@ public class CombinationSum_39
     	
     	return;
     }
-
-    
-    //DFS 2: Add or not add one element as one level
-    private void helper_2(int[] candidates, int curIndex, int curSum, int target,List<Integer> curRes, List<List<Integer>> res)
-    {
-    	for(int i=curIndex; i<candidates.length; i++)
-    	{
-    	
-    		
-    		
-    	}
-    
-    }
-    
+	
+	
+	
 }

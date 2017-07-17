@@ -7,7 +7,7 @@ public class ArrayListDeletion {
 	public static void main(String[] args)
 	{
 		
-		//Why the solution here are wrong!!!
+		//Why the solution here is wrong!!!
 		ArrayList<Integer> arr = new ArrayList<Integer>();
 		
 		arr.add(1);
