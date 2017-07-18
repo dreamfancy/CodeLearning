@@ -6,7 +6,19 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class InterviewPaper 
+
+// Question 1:
+//Input as below by scanner
+//3 The first array size is 3
+//0 first array element 1
+//1 first array element 2
+//2 first array element 3
+//2 The second array size is 2
+//1 second array element 1
+//2 second array element 2
+
+
+public class IfSArrayAContainsArrayB_Atlassian 
 {
 	
     public static void main(String args[] ) throws Exception 
