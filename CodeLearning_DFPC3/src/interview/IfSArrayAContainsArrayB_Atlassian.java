@@ -59,7 +59,6 @@ public class IfSArrayAContainsArrayB_Atlassian
     	{
     		if(st1.pop()!=st2.pop())
     		{
-    			//return -1;
     			System.out.println(-1);
     		}
     	}

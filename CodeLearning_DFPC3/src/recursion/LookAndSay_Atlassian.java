@@ -1,4 +1,4 @@
-package interview;
+package recursion;
 
 import java.io.*;
 import java.util.*;
