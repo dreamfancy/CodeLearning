@@ -6,7 +6,7 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class InterviewPaper3 {
+public class LookAndSay_Atlassian {
 
     public static void main(String args[] ) throws Exception 
     {
