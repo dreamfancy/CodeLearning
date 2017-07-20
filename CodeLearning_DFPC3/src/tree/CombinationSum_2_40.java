@@ -16,6 +16,33 @@ public class CombinationSum_2_40 {
 		return res;	
     }
     
+    
+    //DFS 2
+    private void helper_2(int[] candidates, int curIndex, int curSum, int target,List<Integer> curRes, List<List<Integer>> res)
+    {
+    	if(curSum==target)
+    	{
+    		res.add(new ArrayList<Integer>(curRes));
+    		return;
+    	}
+    	if(curSum>target || curIndex<0 || curIndex>=candidates.length) return;
+		helper(candidates,curIndex+1,curSum,target,curRes,res);
+    	for(int i=curIndex; i<candidates.length-1; i++)
+    	{
+        	int curNum = candidates[i];
+    		curSum += curNum;
+    		curRes.add(curNum);
+    		helper(candidates,i,curSum,target,curRes,res);
+    		curSum -= curNum;
+    		curRes.remove(curRes.size()-1);
+    	}
+    	
+    	
+    	return;
+    }
+    
+    
+    
     //DFS 1: Add or not add one group of elements as one level
     private void helper(int[] candidates, int curIndex, int curSum, int target,List<Integer> curRes, List<List<Integer>> res)
     {
