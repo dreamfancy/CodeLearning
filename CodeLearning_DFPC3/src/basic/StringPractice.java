@@ -4,7 +4,7 @@ public class StringPractice {
 
 	public static void main(String[] args)
 	{
-		StringSplitPractice_2();
+		StringCharPractice();
 	}
 	
 	
