@@ -17,7 +17,7 @@ public class LongestStringWithoutDuplicate_3
     }
 
     public boolean allUnique(String s, int start, int end) {
-        Set<Character> set = new HashSet<>();
+        Set<Character> set = new HashSet<Character>();
         for (int i = start; i < end; i++) {
             Character ch = s.charAt(i);
             if (set.contains(ch)) return false;

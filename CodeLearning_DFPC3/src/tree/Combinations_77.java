@@ -34,7 +34,7 @@ public class Combinations_77
     	for(int i=cur; i<n; i++)
     	{
     		curList[num] = i+1;
-    		helper_2(n,k,num+1,i+1,curList,res);
+    		helper_2(n,k,num+1,i+1,curList,res); 
     	}
     }
 	
