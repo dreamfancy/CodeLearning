@@ -20,6 +20,7 @@ public class CombinationSum_2_40 {
     //DFS_2
     //Please revisit this scenario.
     //For this questions, solution_1 is much better than solution_2
+    //The solution below has considered a lot of different possibilities, but still there is one more needs to be considered.
     private void helper_2(int[] candidates, int curIndex, int left,List< Integer> curRes, List<List<Integer>> res)
     {
     	if(left==0)
@@ -30,7 +31,7 @@ public class CombinationSum_2_40 {
     	if(left<0 || curIndex<0 || curIndex>candidates.length) return;
     	if( curIndex>0 && candidates[curIndex] == candidates[curIndex-1] && !curRes.isEmpty() && curRes.get(curRes.size()-1)==candidates[curIndex])
         {
-    		 int curNum = candidates[curIndex];
+    		int curNum = candidates[curIndex];
     	    left =  left - curNum;
     		curRes.add(curNum);
     		helper_2(candidates,curIndex+1,left,curRes,res);

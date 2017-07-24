@@ -17,5 +17,10 @@ public class IntArrayComparator implements Comparator{
 	}
 
 
+	//How to do deep copy of array
+	
+	//newArray  = new int[original.length]
+	// newArray = Arrays.copyOf(original,original.length)l;
+	
 	
 }
