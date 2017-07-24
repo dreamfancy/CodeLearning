@@ -15,7 +15,7 @@ public class CombinationSum_39
     	if(candidates==null || candidates.length==0 || target<=0) return res;
     	List<Integer> curRes = new ArrayList<Integer>();
     	Arrays.sort(candidates);
-    	helper(candidates,0,0,target,curRes,res);
+    	helper_2(candidates,0,0,target,curRes,res);
 		return res;	
     }
     
@@ -30,7 +30,7 @@ public class CombinationSum_39
     	if(curSum>target || curIndex<0 || curIndex>=candidates.length) return;
     	int curNum = candidates[curIndex];
 		helper(candidates,curIndex+1,curSum,target,curRes,res);
-    	for(int i=1; curNum<=(target-curSum); i++)
+    	while(curNum<=(target-curSum))
     	{
     		curSum += curNum;
     		curRes.add(curNum);
@@ -57,10 +57,24 @@ public class CombinationSum_39
     //DFS 2: Add or not add one element as one level
     private void helper_2(int[] candidates, int curIndex, int curSum, int target,List<Integer> curRes, List<List<Integer>> res)
     {
+    	if(curSum==target)
+    	{
+    		res.add(new ArrayList<Integer>(curRes));
+    		return;
+    	}
+    	if(curSum>target || curIndex<0 || curIndex>=candidates.length) return;
+    	
     	for(int i=curIndex; i<candidates.length; i++)
     	{
+        	int curNum = candidates[i];
+        	
+        	curSum = curSum +  curNum;
+        	curRes.add(curNum);
+        	
+    		helper_2(candidates,i,curSum,target, curRes,res);
     	
-    		
+    		curRes.remove(curRes.size()-1);
+    		curSum = curSum - curNum;
     		
     	}
     

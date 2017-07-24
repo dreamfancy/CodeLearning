@@ -5,11 +5,42 @@ import java.util.List;
 
 public class Subsets_78 
 {
+	//Lecture Standard Code
+	//DFS 1:
+	//Each level is "how many elements I want to select
+	//Please see details in lecture 13 1:00:00
+	public void helper_1(char[] array, StringBuilder sb, int index, List<String> result)
+	{
+		result.add(sb.toString());
+		for(int i=index; i<array.length; i++)
+		{
+			helper_1(array,sb,i+1,result);
+			//wall
+			sb.deleteCharAt(sb.length()-1);
+		}
+	}
+	
+	//Lecture Standard Code
+	//DFS 2:
+	//Each level is "if select or not selct the xth element"
+	//"x" is the number of level
+	public void helper_2(char[] array, StringBuilder sb, int index, List<String> result)
+	{
+		if(index==array.length)
+		{
+			result.add(sb.toString());
+			return;
+		} 
+		sb.append(array[index]);
+		helper_2(array,sb,index+1,result);
+		sb.deleteCharAt(sb.length()-1);
+		helper_2(array,sb,index+1,result);
+	}
 	
 	
 	//Solution 3: Iteration For DFS
     public List<String> subsets_3(char[] array,StringBuilder sol, int index, List<String> result)
-    {
+    {  
     	if(index==array.length)
     	{
     		result.add(sol.toString());

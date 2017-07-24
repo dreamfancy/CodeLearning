@@ -8,10 +8,71 @@ public class PalindromicString_4 {
 	}
 	
 	
+	//Solution 3: KMP  Will check later
+	//Solution 4: Manchester
+	
+	
+	
+	//Solution 2: DP: What is the differences of the levels:
+	// j-i
+    public static String longestPalindrome_2(String s) 
+    {
+    	if(s.length()<=1) return s;
+    	
+    	boolean[][] dp = new boolean[s.length()][s.length()];
+    	
+    	for(int i=0; i<s.length(); i++)
+    	{
+    		for(int j=0; j<s.length(); j++)
+    		{
+    			if(i>=j) 
+    			{
+    				dp[i][j] = true;
+    			}
+    			else
+    			{
+    				dp[i][j] = false;
+    			}
+    		}
+    	}
+    	
+    	int maxVal = 1;
+    	int first = 0;
+    	int	tail=0;
+    	
+    	for(int d=1; d<s.length();d++)
+    	{
+    		for(int i=0; d+i<s.length();i++)
+    		{
+    			int j = i+d;
+    			if(s.charAt(i)!=s.charAt(j))
+    			{
+    				dp[i][j] = false;
+    			}
+    			else
+    			{
+    				dp[i][j] = dp[i+1][j-1];
+    				if(dp[i][j])
+    				{
+    					if(d+1>maxVal)
+    					{
+    						maxVal = d+1;
+    						first = i;
+    						tail = j;
+    					}
+    				}
+    			}
+    		}
+    	}
+    	return s.substring(first,tail+1);
+    }
+	
+	
+	
+	
 	
 	//Solution 1: This is the basic solution but will not pass leetcode because it will pass the time limit for a very huge String.
 	//The solution is to consider the two conditions separately
-	
     public static String longestPalindrome(String s) 
     {
         if(s==null || s.length() <=1) return s;
