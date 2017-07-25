@@ -20,7 +20,7 @@ public class GenerateParentheses_22 {
     		return res;
     	}
     	if(curL<n)
-    	{
+    	{ 
     		sb.append("(");
     		res = helper(n,curL+1,curR,sb,res);
     		sb.deleteCharAt(sb.length()-1);  

@@ -27,5 +27,24 @@ public class BitKnowledge
 		>>>right shift with zero filled
 		
 		Time O(1)
+		
 	*/
+	
+	//set index k bit to 1 of int x:
+	// x | 1<<k
+	
+	//set kth bit to 0 of int x
+	// x & ~(1<<k)
+	
+	//check kth bit is 1 of int x
+	// x&(1<<k)
+	// ( x>>k)&1
+	
+	//check kth bit is 0 of int x
+	// (x&1<<k)==0?
+	// (1&x>>k)==0?
+	 
+	
+	//lecture 14 2:41
+	
 }

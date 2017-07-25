@@ -45,7 +45,7 @@ public class ValidParentheses_20 {
     			st.push(')');
     		}
     		else if(charArray[i]=='[')
-    		{
+    		{ 
     			st.push(']');
     		}
     		else if(charArray[i]=='{')
