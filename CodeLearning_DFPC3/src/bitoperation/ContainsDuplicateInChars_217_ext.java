@@ -12,7 +12,7 @@ public class ContainsDuplicateInChars_217_ext {
 			int row = i/32;
 			int col = i%32;
 			if((bits[row] & (1<<col))!=0) return false;
-			bits[row] = array[row] | (1<<col);
+			bits[row] = array[row] | (1<<col) ;
 		}
 		
 		return true;

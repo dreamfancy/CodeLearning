@@ -19,4 +19,6 @@ public class changeNumberTo0x
 		return "0x" + sb.toString();
 	}
 
+	//or, not use StringBuilder nor reverse
+	//change line  
 }
