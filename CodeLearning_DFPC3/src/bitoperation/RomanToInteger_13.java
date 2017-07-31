@@ -4,7 +4,8 @@ public class RomanToInteger_13
 {
 	//Solution 3:
 	//Use Array to save time
-	  public int romanToInt_3(String s) {
+	  public int romanToInt_3(String s) 
+	  {
 	       int conv[] = new int[s.length()];
 	        for(int i = 0; i < s.length(); i++)
 	        {
@@ -26,7 +27,7 @@ public class RomanToInteger_13
 	        	else sum+=conv[i];
 	        }
 	        return sum+conv[conv.length-1];
-	    }
+	  }
 	
 	
 	//Solution 2: 
