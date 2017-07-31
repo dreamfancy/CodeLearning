@@ -15,6 +15,7 @@ public class RemoveCharsFromString {
 	
 	public String removeCharsFromString_1(String s, char t)
 	{
+		if(s==null ||s.length()==0) return new String();
 		char[] charArr = s.toCharArray();
 		
 		int j=0;
@@ -33,5 +34,6 @@ public class RemoveCharsFromString {
 		 //return String.valueOf(charArr).substring(0,j);
 	}
 	 
+	//Cannot use swap because order needs to be kept!!!
 	
 }
