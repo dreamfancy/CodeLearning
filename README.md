@@ -1,8 +1,7 @@
 # CodeLearning 
 
 Lecture
-14 starting
+16 1:55:00
 
 leetcode queue
 
-39,40,216,377 Combination sum 2 3 4

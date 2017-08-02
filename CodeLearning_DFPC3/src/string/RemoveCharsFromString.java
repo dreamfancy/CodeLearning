@@ -36,4 +36,6 @@ public class RemoveCharsFromString {
 	 
 	//Cannot use swap because order needs to be kept!!!
 	
+	  
+	
 }
