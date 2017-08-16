@@ -125,7 +125,7 @@ public class LongestPalindromicString_5
         }
         if (maxLen < k - j - 1) {
             lo = j + 1;
-            maxLen = k - j - 1;
+            maxLen = k - j - 1;  
         }
     }
 

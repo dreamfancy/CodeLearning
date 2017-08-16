@@ -8,6 +8,7 @@ public class ReverseString_344
 		if(s==null || s.length()<=1) return s;
 		char[] array = s.toCharArray();   
 		array = helper_1(array,0,array.length-1);
+		
 		return new String(array,0,s.length()-1);
     }
 	
@@ -26,7 +27,7 @@ public class ReverseString_344
 		swap(array,start,end);
 		return array;
 	}
-	  
+	 
     private void swap(char[] arr, int i, int j)
     {
     	char temp = arr[i];
