@@ -102,6 +102,7 @@ public class StringToInteger_8
         return res;
     }
     
+	/*
     public static void main(String[] args)
     {
         char c1 = '9';
@@ -114,10 +115,8 @@ public class StringToInteger_8
         System.out.println(val);
         
         System.out.println(Integer.MAX_VALUE);
-
-
-
     }
+    */
     
    
 }

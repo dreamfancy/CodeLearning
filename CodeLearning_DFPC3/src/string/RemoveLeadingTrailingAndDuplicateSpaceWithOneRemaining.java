@@ -16,7 +16,7 @@ public class RemoveLeadingTrailingAndDuplicateSpaceWithOneRemaining
 		int slow = 0;
 		for(int fast=0; fast<chars.length; fast++)
 		{
-			if(!(chars[fast]==' ' && (fast==0 || chars[fast-1] ==' ' )))
+			if(!(chars[fast]==' ' && (fast==0 || chars[fast-1] ==' ')))
 			{
 				chars[slow++] = chars[fast];
 			}

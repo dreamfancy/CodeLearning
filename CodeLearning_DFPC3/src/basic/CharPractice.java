@@ -5,6 +5,7 @@ public class CharPractice {
 	
 	public static void main(String[] args)
 	{
+		/*
 		char ch1 = 'a';
 		char ch2 = 'b';
 		char ch3 = 'A';
@@ -21,6 +22,18 @@ public class CharPractice {
 			System.out.println(c);
 			cur = c;
 		}
+		*/
+		
+		
+		Character c1 = 'a';
+		Character c2 = 'a';
+		
+		System.out.println(c1.equals(c2));
+		
+		char c3 = 'a';
+		char c4 = 'a';
+		
+		System.out.println(c3==c4);
 	}
 	
 }
