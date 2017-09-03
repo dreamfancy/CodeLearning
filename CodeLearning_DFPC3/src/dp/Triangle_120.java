@@ -6,7 +6,6 @@ import java.util.List;
 public class Triangle_120 
 {
 	//Solution 3: Bottom to Up more understandable
-	//
 	public int minimumTotal(ArrayList<ArrayList<Integer>> triangle) {
 		int[] total = new int[triangle.size()];
 		int l = triangle.size() - 1;
