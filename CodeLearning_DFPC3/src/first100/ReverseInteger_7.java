@@ -26,7 +26,7 @@ public class ReverseInteger_7
 	
 	//Solution 1: My Solution: How to deal with the issue of overflow
 	//Check in a reverse flow
-    public int reverse(int x) 
+    public int reverse_MySolution(int x) 
     {
     	boolean neg = false;
     	if(x<0)
