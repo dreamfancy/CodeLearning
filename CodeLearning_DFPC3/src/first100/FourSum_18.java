@@ -15,17 +15,21 @@ public class FourSum_18 {
     	Arrays.sort(nums);
     	for(int i=0; i<nums.length-3; i++)
     	{
-    		if(nums[i]>target) break;
+    		if(i!=0 && nums[i]==nums[i-1]) continue;
+    		//if(nums[i]>target) break; 
+    		//Revisit!!! Why you cannot do this break here
     		for(int j=i+1; j<nums.length-2;j++)
     		{
+    			if(j!=(i+1) && nums[j]==nums[j-1]) continue;
     			int cur = nums[i]+nums[j];
-    			if(cur>target) break;
+    			//if(cur>target) break;
+    			//Revisit!!! Why you cannot do this break here
     			
     			int k=j+1;
     			int l = nums.length-1;
     			while(k<l)
     			{
-    				if(cur+k+l==target)
+    				if((cur+nums[k]+nums[l])==target)
     				{
     					List<Integer> newRes = new ArrayList<Integer>();
     					newRes.add(nums[i]);
@@ -33,12 +37,25 @@ public class FourSum_18 {
     					newRes.add(nums[k]);
     					newRes.add(nums[l]);
     					result.add(newRes);
+    					k++;
+    					l--;
+    					while(k<l && nums[k]==nums[k-1]) k++;
+    					while(k<l && nums[l]==nums[l+1]) l--;
+    				}
+    				else if((cur+nums[k]+nums[l])>target)
+    				{
+    					l--;
+    					while(k<l && nums[l]==nums[l+1]) l--;
+    				}
+    				else
+    				{
+    					k++;
+    					while(k<l && nums[k]==nums[k-1]) k++;
     				}
     			}
-    			
     		}
     	}
-    	
+    	return result;
     }
 
 }
