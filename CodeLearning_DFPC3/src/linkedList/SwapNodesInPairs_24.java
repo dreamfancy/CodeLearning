@@ -1,35 +1,43 @@
 package linkedList;
 
 public class SwapNodesInPairs_24 {
+	
+	//Use dummy node to deal with duplicates
     public ListNode swapPairs(ListNode head) 
     {
     	if(head==null || head.next==null) return head;
     	
-    	return swapInPairsRec(head);
+    	return helper(head);
     }
     
-    public ListNode swapInPairsRec(ListNode head)
+    //List all four nodes by sequence, very clear good!
+    public ListNode helper(ListNode head)
     {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
     	ListNode first = head;
     	ListNode second = head.next;
+        ListNode preNode = dummy; 
+        ListNode nextNode = second.next;
     	
-    	head = second;
-    	
-    	while(second.next!=null && second.next.next !=null)
+    	while(first!=null && second!=null)
     	{
-    		ListNode third = second.next.next;
-    		second.next = first;
-    		first.next = third;
+            nextNode = second.next;
+            second.next = first;
+            first.next = nextNode;
+            preNode.next = second;
+            
+            
+    		preNode = first;
+            
+            first = nextNode;
+            if(nextNode!=null) 
+            {
+                second = first.next;
+            }
+            else second = null;
     	}
-    	ListNode third = second.next;
-    	second.next = first; 
-    	first.next = third;
-    	
-    	if(!third.equals(null))
-    	third.next=null;
-    	
-    	
-    	return head;
+    	return dummy.next;
     }
 	
 }

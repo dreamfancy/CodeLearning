@@ -28,5 +28,31 @@ public class RemoveNthNodeFromEndOfList_19
     	
     	return head;
     }
+    
+    //Solution 2: To avoid the first node issues please use the dummy node
+    public ListNode removeNthFromEnd_2(ListNode head, int n) 
+    {
+    	ListNode dummy = new ListNode(1);
+    	dummy.next = head;
+    	ListNode first = dummy;
+    	ListNode second = dummy;
+    	
+    	int count = n;
+    	while(n>0)
+    	{
+    		second = second.next;
+    		n--;
+    	}
+    	
+    	while(second.next!=null)
+    	{
+    		first = first.next;
+    		second = second.next;
+    	}
+    	
+    	first.next = first.next.next;
+    	
+    	return dummy.next;
+    }
 
 }
