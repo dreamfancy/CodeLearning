@@ -8,10 +8,10 @@ import java.util.Map;
 
 public class LetterCombinationsOfPhoneNumber_17 
 {
-	//My Solution 1: Iterate StringBuilde
-    public List<String> letterCombinations(String digits) 
+	//My Solution 1: Iterate StringBuilder
+    public List<String> letterCombinations_1(String digits) 
     {
-    	//Map<Integer,List<Character>> repo = new HashMap<Integer,List>(); 	
+    	Map<Integer,String> repo = new HashMap<Integer,String>(); 	
     	List<String> result = new ArrayList<String>();
     	if(digits==null || digits.length()==0) return result; 
     	StringBuilder sb = new StringBuilder();
@@ -134,5 +134,52 @@ public class LetterCombinationsOfPhoneNumber_17
     	}
     }
     
+    //Solution 2  from program creek
+    //Use char[] array, then String.valueOf(charArray) to convert
+    //Use HashMap to store value, Use String to save different possibilities
+    //of chars, then use for loop with charAt to loop
+    
+    public List<String> letterCombinations_2(String digits) 
+    {
+        HashMap<Integer, String> map = new HashMap<Integer, String>();
+        map.put(2, "abc");
+        map.put(3, "def");
+        map.put(4, "ghi");
+        map.put(5, "jkl");
+        map.put(6, "mno");
+        map.put(7, "pqrs");
+        map.put(8, "tuv");
+        map.put(9, "wxyz");
+        map.put(0, "");
+     
+        ArrayList<String> result = new ArrayList<String>();
+     
+        if(digits == null || digits.length() == 0)
+            return result;
+     
+        ArrayList<Character> temp = new ArrayList<Character>();
+        getString(digits, temp, result, map);
+     
+        return result;
+    }
+     
+    public void getString(String digits, ArrayList<Character> temp, ArrayList<String> result,  HashMap<Integer, String> map){
+        if(digits.length() == 0){
+            char[] arr = new char[temp.size()];
+            for(int i=0; i<temp.size(); i++){
+                arr[i] = temp.get(i);
+            }
+            result.add(String.valueOf(arr));
+            return;
+        }
+     
+        Integer curr = Integer.valueOf(digits.substring(0,1));
+        String letters = map.get(curr);
+        for(int i=0; i<letters.length(); i++){
+            temp.add(letters.charAt(i));
+            getString(digits.substring(1), temp, result, map);
+            temp.remove(temp.size()-1);
+        }
+    }
 
 }
