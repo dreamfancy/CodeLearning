@@ -25,6 +25,6 @@ public class LongestAscendingSubarray {
 		{
 			if(dp[j]>max) max = dp[j];
 		}
-		return max;
+		return max;  
 	}
 }
