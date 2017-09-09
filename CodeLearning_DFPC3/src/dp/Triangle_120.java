@@ -5,6 +5,77 @@ import java.util.List;
 
 public class Triangle_120 
 {
+	
+	//Lecture sol 1: DFS
+	int min;
+	int n;
+	private void dfs(int i, int j, int sum, int[][] matrix)
+	{
+		if(i==n) 
+		{
+			if(sum<min)
+			{
+				min = sum;
+			}
+			return;
+		}
+		
+		dfs(i+1,j,sum+matrix[i][j],matrix);
+		dfs(i+1,j+1,sum+matrix[i][j],matrix);  
+	}
+	
+	//Lecture sol 2: divide and conquer
+	//return divideConquer(0,0,matrix); 
+	
+	
+	public int divideConquer(int i, int j, int[][] matrix)
+	{
+		if(i==n) return matrix[i][j];
+		int left = divideConquer(i+1,j,matrix);
+		int right = divideConquer(i+1,j+1,matrix); 
+		return Math.min(left, right)+matrix[i][j];
+	}
+	
+	
+	//Lecture sol 3: store planed storage for divideConquer
+	int[][] matrix = new int[100][50];
+	int[][] dp = new int[matrix.length][matrix[0].length];
+	public int divideConquer_withStorage (int i, int j, int[][] matrix)
+	{
+		if(i==n) return 0;
+		if(dp[i][j]!=0) return dp[i][j];  //if(dp[i][j] was updated)
+		int left = divideConquer(i+1,j,matrix);
+		int right = divideConquer(i+1,j+1,matrix); 
+		//return Math.min(left, right)+matrix[i][j];
+		dp[i][j] = Math.min(left, right)+matrix[i][j];
+		return dp[i][j];
+	}
+	
+	//Lecture sol 4: dp
+	public int dpSolution(int[][] matrix)
+	{
+		int[][] dp = new int[matrix.length][matrix[0].length];
+		for(int j=0; j<matrix[0].length;j++)
+		{
+			dp[matrix.length-1][j] = matrix[matrix.length-1][j];
+		}
+		
+		for(int i=matrix.length-2; i>=0; i--)
+		{
+			for(int j=0; j<=i; j++)
+			{
+				dp[i][j] = Math.min(dp[i+1][j], dp[i+1][j+1])+matrix[i][j];
+			}
+		}
+		//TODO: check all the values of dp[0][x], find the minimum to dp[0][0];
+		
+		return  dp[0][0];
+	}
+	
+	
+	
+	
+	
 	//Solution 3: Bottom to Up more understandable
 	public int minimumTotal(ArrayList<ArrayList<Integer>> triangle) {
 		int[] total = new int[triangle.size()];
@@ -19,7 +90,7 @@ public class Triangle_120
 			for (int j = 0; j < triangle.get(i + 1).size() - 1; j++) {
 				total[j] = triangle.get(i).get(j) + Math.min(total[j], total[j + 1]);
 			}
-		}
+		 }
 	 
 		return total[0];
 	}
