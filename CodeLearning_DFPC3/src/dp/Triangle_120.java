@@ -67,7 +67,7 @@ public class Triangle_120
 				dp[i][j] = Math.min(dp[i+1][j], dp[i+1][j+1])+matrix[i][j];
 			}
 		}
-		//TODO: check all the values of dp[0][x], find the minimum to dp[0][0];
+		//TODO: check all the values of dp[0][x], find the minimum to dp[0][0]; 
 		
 		return  dp[0][0];
 	}
