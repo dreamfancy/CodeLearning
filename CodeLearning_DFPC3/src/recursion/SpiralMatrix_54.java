@@ -139,7 +139,7 @@ public class SpiralMatrix_54 {
             for(int i=0;i<m-1;i++){
                 result.add(matrix[x++][y]);
             }
- 
+  
             //bottom - move left
             for(int i=0;i<n-1;i++){
                 result.add(matrix[x][y--]);
