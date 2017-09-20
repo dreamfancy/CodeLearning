@@ -1,13 +1,34 @@
 package basic;
 
+import java.util.Arrays;
+
 public class StringPractice {
 
 	public static void main(String[] args)
 	{
-		StringCharPractice();
+		StringCharConversePractice();
 	}
 	
-	
+	public static void StringCharConversePractice()
+	{
+		char[] charArray = {'h','e','l','l','o'};
+		String s1 = new String(charArray);
+		System.out.println("1: " + s1);
+		
+		String s2 = String.valueOf(charArray);
+		System.out.println("2: " + s2);
+		
+		String s3 = String.copyValueOf(charArray);
+		System.out.println("3: " + s3);
+		
+		//String s4 = new StringBuilder(Arrays.asList(charArray));
+		//System.out.println("4: " + s4);
+		
+		String s4 = Arrays.toString(charArray);
+		System.out.println("4: " + s4);
+		
+	}
+
 	
 	public static void StringCharPractice()
 	{
