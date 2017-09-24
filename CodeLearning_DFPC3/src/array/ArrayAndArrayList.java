@@ -50,6 +50,7 @@ public class ArrayAndArrayList {
     
     public static void main(String[] args)
     {
+    	/*
     	List<Integer> list = new ArrayList<Integer>();
     	//System.out.println(list.get(3));
     	list.add(3);
@@ -72,6 +73,22 @@ public class ArrayAndArrayList {
     	for(int i=0; i<res.length; i++)
     	{
     		System.out.println(res[i]);
+    	}
+    	*/
+    	List<Integer> list = new ArrayList<Integer>();
+    	//System.out.println(list.get(3));
+    	list.add(3);
+    	list.add(new Integer(2));
+    	list.add(new Integer(1));
+    	
+    	for(int i: list)
+    	{
+    		i = i+1;
+    	}
+    	
+    	for(int i: list)
+    	{
+    		System.out.println(i);
     	}
     }
 }

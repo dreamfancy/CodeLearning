@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class ArrayListDeletion {
 
+	/*
 	public static void main(String[] args)
 	{
 		
@@ -23,6 +24,7 @@ public class ArrayListDeletion {
 		{
 			System.out.println(arr.get(i));
 		}
-		
 	}
+	*/
+	
 }
