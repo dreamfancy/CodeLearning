@@ -30,7 +30,6 @@ public class PathSum_3_437
         //{
         result[0] += hasMatch(sum,curSum);
         //}
-        
         pathSum(root.left,sum,curSum,result);
         pathSum(root.right,sum,curSum,result);
         
