@@ -7,8 +7,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
-import tree.TreeNode;
-
 public class PreorderTraversal_144 {
 	
 	//Solution 1: Recursion

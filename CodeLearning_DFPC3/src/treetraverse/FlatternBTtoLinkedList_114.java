@@ -1,6 +1,5 @@
 package treetraverse;
 
-import tree.TreeNode;
 
 public class FlatternBTtoLinkedList_114 
 {
