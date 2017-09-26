@@ -40,7 +40,7 @@ public class DequePractice {
 	
 	public static void main(String[] args)
 	{
-		//queuePractice();
+		priorityQueuePractice();
 		System.out.println(11);
 		dequePractice();
 	}

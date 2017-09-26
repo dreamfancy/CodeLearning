@@ -48,7 +48,7 @@ public class MyQueueByArray <T>{
 	{
 		if(size<=0) return -1;
 		int res = array[head];
-		head = (++head)%capacity;
+		head = (++head)%capacity; 
 		size--;
 		return res;
 	}

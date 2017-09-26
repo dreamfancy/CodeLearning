@@ -17,7 +17,7 @@ public class ArrayListDeletion {
 		
 		for(int i=0; i<arr.size(); i++)
 		{
-			if(arr.get(i)==1) arr.remove(i);
+			if(arr.get(i)==1) arr.remove(i);  //<-- i should not ++ if a deletion is happening
 		}
 		
 		for(int i=0; i<arr.size(); i++)
