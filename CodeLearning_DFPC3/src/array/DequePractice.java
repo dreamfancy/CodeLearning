@@ -1,4 +1,4 @@
-package basic;
+package array;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -31,6 +31,9 @@ public class DequePractice {
 		System.out.println(dq.peek());
 		dq.addFirst(2);
 		System.out.println(dq.peek());
+		System.out.println(dq.peekFirst());
+		System.out.println(dq.peekLast());
+		
 		dq.addLast(3);
 		System.out.println(dq.removeFirst());
 		System.out.println(dq.removeLast());

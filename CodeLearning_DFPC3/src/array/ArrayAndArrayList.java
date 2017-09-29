@@ -16,7 +16,12 @@ public class ArrayAndArrayList {
        
        
     }
-  */  
+  */ 
+	
+	public String getArrayToString(int[] array,int start, int end)
+	{
+		return new String(array,start,end-1); 
+	}
     public static int[] castArrayListToArray(List<Integer> list)
     {
     	int[] ret = new int[list.size()];
