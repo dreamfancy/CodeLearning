@@ -1,4 +1,4 @@
-package linkedList;
+package dfs;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -109,7 +109,7 @@ public class CopyListWithRandomPointer_138
     	// Third round: restore the original list, and extract the copy list.
     	iter = head;
     	RandomListNode pseudoHead = new RandomListNode(0);
-    	RandomListNode copy, copyIter = pseudoHead;
+    	RandomListNode   copy, copyIter = pseudoHead;
 
     	while (iter != null) {
     		next = iter.next.next;
