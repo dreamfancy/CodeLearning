@@ -1,7 +1,14 @@
-package dfs;
-
+package treetraverse;
+ 
 public class ClosestBST_270 
 {
+	//Follow up:
+	/* If the question is find the largest smaller than target
+	 * 1 change the initialization of result to Integer.Min_Value 
+	 * 2 Before return ,you need to make sure the result is valid as
+	 * it is possible that none of the tree node satisfy the requirement
+	 */
+	
 	public int closestBSTValue(TreeNode root, int target) throws Exception
 	{
 		if(root==null) throw new Exception();
