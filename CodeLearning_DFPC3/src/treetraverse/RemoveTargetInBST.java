@@ -38,9 +38,10 @@ public class RemoveTargetInBST {
 	
 	public TreeNode findSmallest(TreeNode root)
 	{
-		while(root.left!=null)
+		if(root==null) return null;
+		if(root.left!=null)
 		{
-			root = root.left;
+			return findSmallest(root.left);
 		}
 		return root;
 	}
