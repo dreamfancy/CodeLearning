@@ -1,9 +1,26 @@
 package basic;
 
+import java.util.List;
+
 public class CharPractice {
 
 	
 	public static void main(String[] args)
+	{
+		//Collecitons cannot be arrayed
+		//ArrayList<Integer>[] listArray = new ArrayList<Integer>[3];
+		
+	}
+	
+	public void practice2()
+	{
+		char[] chararray = new char[5];
+		
+		System.out.println(chararray[0]);
+		System.out.println(chararray[0]);
+	}
+	
+	public void practice1()
 	{
 		/*
 		char ch1 = 'a';
@@ -35,5 +52,4 @@ public class CharPractice {
 		
 		System.out.println(c3==c4);
 	}
-	
 }
