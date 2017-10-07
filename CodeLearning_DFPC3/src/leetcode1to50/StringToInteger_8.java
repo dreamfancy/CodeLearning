@@ -8,6 +8,12 @@ public class StringToInteger_8
         if(str==null || str.length()==0) return 0;
         int cur = 0;
         while(str.charAt(cur)==' ') cur++;
+        // or use string trim()
+        //str = str.trim();
+        //if (str.length() == 0) {
+        //    return 0;
+        //}
+        
         boolean flag = true;
         if(str.charAt(cur)=='-')
         {

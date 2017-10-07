@@ -4,6 +4,22 @@ public class IntegerPractice {
 
 	public static void main(String[] args)
 	{
+		integerToString();
+
+		
+	}
+	
+	
+	public static void integerToString()
+	{
+		int a = 123;
+		StringBuilder sb = new StringBuilder();
+		sb.append(a);
+		System.out.println(sb.toString());
+	}
+	
+	public void stringToInteter()
+	{
 		String numString = "123";
 		int num = Integer.parseInt(numString);
 	//	int num = Integer.parseInt(numString+" "+"678");
