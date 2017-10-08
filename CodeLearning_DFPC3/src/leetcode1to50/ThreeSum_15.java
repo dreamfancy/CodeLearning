@@ -47,8 +47,14 @@ public class ThreeSum_15
         	if(nums[left]+nums[right]==target)
         	{
         		res.add(Arrays.asList(nums[left],nums[right], -target));
-        	}
         	
+        		while(left<right && nums[left]==nums[left+1]) left++;
+        		while(left<right && nums[right] == nums[right-1]) right--;
+        		left++;
+        		right--;
+        	}
+        	else if (nums[left]+nums[right]<target) left++;
+        	else right--;
         }
     }
 	

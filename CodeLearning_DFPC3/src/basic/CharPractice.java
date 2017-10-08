@@ -9,9 +9,22 @@ public class CharPractice {
 	{
 		//Collecitons cannot be arrayed
 		//ArrayList<Integer>[] listArray = new ArrayList<Integer>[3];
-		
+		charToInt();
 	}
 	
+	
+	public static void charToInt()
+	{
+		System.out.println(Character.getNumericValue('2'));
+		System.out.println(Character.getNumericValue('a'));
+		System.out.println(Character.getNumericValue('l'));
+		//System.out.println(Character.getNumericValue('12')); //exception here
+
+
+
+		
+		
+	}
 	public void practice2()
 	{
 		char[] chararray = new char[5];
