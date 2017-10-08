@@ -6,9 +6,41 @@ public class StringPractice {
 
 	public static void main(String[] args)
 	{
-		StringCharConversePractice();
+		emptyString();
 	}
 	
+	public static void emptyString()
+	{
+		String s1= "";
+		System.out.println(s1.length());
+		System.out.println(s1.substring(0, 0)); //Will NOT exception!!!
+		System.out.println("Hi"); 
+		System.out.println(s1.substring(0, 1)); //Will go to exception
+
+
+	}
+	
+	
+	public static void getSomeOfString()
+	{
+		String s1 = "Chaoyang Fan";
+		System.out.println(s1.indexOf("Chao")); //0
+		System.out.println(s1.indexOf("Fan")); //9
+		
+		System.out.println(s1.startsWith("Chao"));  //true
+		System.out.println(s1.startsWith("Fan"));   //false
+		
+	}
+
+	public static void StringUseDeepCopy()
+	{
+		String s1 = "Chaoyang";
+		String s2 = s1;
+		s2 = s2.substring(4);
+		
+		System.out.println(s1);
+		System.out.println(s2);
+	}
 	public static void StringCharConversePractice()
 	{
 		char[] charArray = {'h','e','l','l','o'};
@@ -30,7 +62,7 @@ public class StringPractice {
 	}
 
 	
-	public static void StringCharPractice()
+	public static void StringCharPractice_3()
 	{
 		String str = "Chaoyang";
 		char ch1 = str.charAt(2);
