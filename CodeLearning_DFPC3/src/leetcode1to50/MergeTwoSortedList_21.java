@@ -2,7 +2,25 @@ package leetcode1to50;
 
 public class MergeTwoSortedList_21 {
 	
-	//Recursion
+	//Recursion LC Discuss 1
+    public ListNode mergeTwoLists_Rec(ListNode l1, ListNode l2) {
+        if(l1==null)
+            return l2;
+        if(l2==null)
+            return l1;
+        if(l1.val<=l2.val){
+            ListNode res = new ListNode(l1.val);
+            res.next = mergeTwoLists_Rec(l1.next, l2);
+            return res;
+        }else{
+            ListNode res = new ListNode(l2.val);
+            res.next = mergeTwoLists_Rec(l1, l2.next);
+            return res;
+        }
+    }
+	
+	
+	//Recursion My Solution
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) 
     {
         if(l1==null) return l2;
