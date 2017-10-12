@@ -1,4 +1,4 @@
-package first100;
+package leetcode1to50;
 
 public class DivideTwoIntegers_29 
 {
@@ -13,8 +13,8 @@ public class DivideTwoIntegers_29
 	        return Integer.MAX_VALUE;
 	 
 	    //get positive values
-	    long pDividend = Math.abs((long)dividend);
-	    long pDivisor = Math.abs((long)divisor);
+	    long pDividend = (long)Math.abs(dividend);
+	    long pDivisor = (long)Math.abs(divisor);
 	 
 	    int result = 0;
 	    while(pDividend>=pDivisor){

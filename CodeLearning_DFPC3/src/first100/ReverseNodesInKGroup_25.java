@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class ReverseNodesInKGroup_25 
 {
-	//LC Discussion : recursion, first recursion then process
+	//LC Discussion 1: recursion, first recursion then process
 	public ListNode reverseKGroup_Rec2(ListNode head, int k) {
 	    ListNode curr = head;
 	    int count = 0;
