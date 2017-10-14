@@ -5,6 +5,28 @@ import java.util.Set;
 
 public class IsValidSudoku_36 
 {
+	//Discussion Solution: Make a 3D matrix to 1D
+	public boolean isValidSudoku_3(char[][] board) {
+	    for(int i = 0; i<9; i++){
+	        HashSet<Character> rows = new HashSet<Character>();
+	        HashSet<Character> columns = new HashSet<Character>();
+	        HashSet<Character> cube = new HashSet<Character>();
+	        for (int j = 0; j < 9;j++){
+	            if(board[i][j]!='.' && !rows.add(board[i][j]))
+	                return false;
+	            if(board[j][i]!='.' && !columns.add(board[j][i]))
+	                return false;
+	            int RowIndex = 3*(i/3);
+	            int ColIndex = 3*(i%3);
+	            if(board[RowIndex + j/3][ColIndex + j%3]!='.' && !cube.add(board[RowIndex + j/3][ColIndex + j%3]))
+	                return false;
+	        }
+	    }
+	    return true;
+	}
+	
+	
+	
 	//LC High rated solution 1: Because number is only from 1-9 (limited), and there
 	//are only two states: visited / non-visited ---> boolean[] array
     public boolean isValidSudoku_2(char[][] board) {
