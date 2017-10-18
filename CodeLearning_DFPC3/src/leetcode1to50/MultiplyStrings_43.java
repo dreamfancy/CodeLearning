@@ -30,7 +30,7 @@ public class MultiplyStrings_43
             for(int q=n-1; q>=0; q--)
             {
                 int product = data1[p] * data2[q] + res[p+q+1];
-                res[p+q+1] += product%10; //REvisit !!!Why there is + here !!!
+                res[p+q+1] = product%10; //REvisit !!!Why there is no + here !!!
                 res[p+q] += product/10;   //REvisit !!!Why there is + here !!!
             }
         }

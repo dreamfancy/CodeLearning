@@ -1,7 +1,9 @@
 package leetcode1to50;
 
 public class Jump_2_45 {
-    public int jump(int[] nums) 
+    
+	
+	public int jump(int[] nums) 
     {
         if(nums==null || nums.length<=1) return 0;
         
