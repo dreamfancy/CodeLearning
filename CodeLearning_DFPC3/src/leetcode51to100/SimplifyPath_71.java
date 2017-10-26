@@ -5,9 +5,6 @@ import java.util.Stack;
 public class SimplifyPath_71 
 {
 	
-	
-	
-	
 	//My Solution Good! Especially use sb.insert(0,str);
     public String simplifyPath(String path) 
     {
