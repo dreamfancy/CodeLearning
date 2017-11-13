@@ -1,7 +1,25 @@
 package leetcode101to130;
 
 public class BestTimeToBuyAndSellStock_1_121 {
-    public int maxProfit(int[] prices) {
+	
+	
+	//Sol 2: Based On curMin Price, update curMax price: Greedy
+    public int maxProfit_2(int prices[]) {
+        int minprice = Integer.MAX_VALUE;
+        int maxprofit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < minprice)
+                minprice = prices[i];
+            else if (prices[i] - minprice > maxprofit)
+                maxprofit = prices[i] - minprice;
+        }
+        return maxprofit;
+    }
+	
+	
+	
+	//Sol 1: My solution
+    public int maxProfit_1(int[] prices) {
         if(prices==null || prices.length<=1) return 0;
         int len = prices.length;
         
