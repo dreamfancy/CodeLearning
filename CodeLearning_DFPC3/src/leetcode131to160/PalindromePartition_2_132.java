@@ -2,10 +2,36 @@ package leetcode131to160;
 
 public class PalindromePartition_2_132 
 {
+	//Sol 2: DP from program creek
+	public int minCut_2(String s) 
+	{
+        if(s==null || s.length()<=1) return 0;
+        int n = s.length();	
+        int[] cut = new int[n];
+        boolean[][] dp = new boolean[n][n];
+        
+        for(int j=0; j<n; j++)
+        {
+        	cut[j] = j;
+        	for(int i=0; i<=j; i++)
+        	{
+        		if(s.charAt(i)==s.charAt(j)&& (dp[i+1][j-1] || (j-i<=1)))
+        		{
+        			dp[i][j] = true;
+        			if(i>0)
+        			{
+        				cut[j] = Math.min(cut[j], cut[i-1]+ 1);
+        			}
+        			else cut[j] = 0;
+        		}
+        	}
+        }
+        return cut[n-1];
+	}
 	
 	//Sol 1: DP Youtube Video Tushar
-	//DP from the diagnol to the right top
-    public int minCut(String s) {
+	//DP from the diagnol to the right top!!!
+    public int minCut_1(String s) {
         if(s==null || s.length()<=1) return 0;
         int n = s.length();
         int[][] dp = new int[n+1][n+1];
