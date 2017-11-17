@@ -37,7 +37,7 @@ public class SingleNumber_2_137
            2nd, 3rd and 4th iterations respectively */
             ones &=common_bit_mask;
             /* Remove common bits (the bits that appear third time) from 'twos'
- 
+   
            Value of 'twos' will be set as 0, 3, 1 and 0 after 1st,
            2nd, 3rd and 4th itearations respectively */
             twos &=common_bit_mask;
