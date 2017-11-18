@@ -2,9 +2,34 @@ package leetcode131to160;
 
 public class InsertionSortList_147 
 {
+	//Sol 2: 
+	public ListNode insertionSortList_2(ListNode head) 
+	{
+		if(head==null) return head;
+		ListNode helper = new ListNode(0);
+		ListNode cur = head;
+		ListNode pre = helper;
+		ListNode next = null;
+		
+		while(cur!=null)
+		{
+			next = cur.next;
+			while(pre.next!=null && pre.next.val<cur.val)
+			{
+				pre = pre.next;
+			}
+			cur.next = pre.next;
+			pre.next = cur;
+			pre = helper;
+			cur = next;
+		}
+		
+		return helper.next;
+	}
+
 	
 	//Sol 1: use the previous list node as storage, wrong
-    public ListNode insertionSortList(ListNode head) {
+    public ListNode insertionSortList_1(ListNode head) {
         
         if(head==null) return head;
         ListNode dummyhead = new ListNode(1);
