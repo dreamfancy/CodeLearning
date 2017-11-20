@@ -82,6 +82,7 @@ public class LRUCache {
     		n = new Node(key,value);
     		hash.put(key, n);
     		add(n);
+    		count++;
     	}
     	else
     	{
