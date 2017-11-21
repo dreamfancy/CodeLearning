@@ -6,7 +6,13 @@ public class StringPractice {
 
 	public static void main(String[] args)
 	{
-		emptyString();
+		//emptyString();
+		//StringUseDeepCopy();
+		//StringCharConversePractice();
+		//StringSplitPractice_1();
+		//StringSplitPractice_2();
+		StringSplitPractice_3();
+
 	}
 	
 	public static void emptyString()
@@ -80,16 +86,23 @@ public class StringPractice {
 		
 	}
 	
+	public static void StringSplitPractice_3()
+	{
+		String str = "25";
+		String[] arr = str.split(".");
+		System.out.println(arr.length);
+	}
+	
 	
 	public static void StringSplitPractice_2()
 	{
 		String str = "   ";
-		String[] arr = str.split(" ");
+		String[] arr = str.split("");
 		System.out.println(arr.length);
 		
 		for(int i=0; i<arr.length;i++)
 		{
-			System.out.print(arr[i]);
+			System.out.println(arr[i]);
 		}
 		System.out.println("end");
 
