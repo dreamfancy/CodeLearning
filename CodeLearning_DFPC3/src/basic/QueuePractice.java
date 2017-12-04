@@ -20,19 +20,39 @@ public class QueuePractice {
 	
 	public static void priorityQueuePractice()
 	{
-		PriorityQueue<Integer> q = new PriorityQueue<Integer>();
-		q.offer(3);
-		q.offer(2);
-		q.offer(4);
+		PriorityQueue<Integer> q1 = new PriorityQueue<Integer>();
+		q1.offer(3);
+		q1.offer(2);
+		q1.offer(4);
 
-		System.out.println(q.peek());
-		System.out.println(q.poll());
-		
+		System.out.println(q1.peek());
+		System.out.println(q1.poll());
+		System.out.println("************");
 
-		
+		PriorityQueue<Integer> q2 = new PriorityQueue<Integer>();
+		q2.offer(2);
+		System.out.println(q2.peek());
+		q2.offer(1);
+		System.out.println(q2.peek());
+		q2.offer(1);
+		System.out.println(q2.peek());
+		q2.poll();
+		System.out.println(q2.peek());
+		q2.poll();
+		System.out.println(q2.peek());
+		q2.poll();
+		System.out.println(q2.peek());
+
 		
 	}
-
+	
+	
+	public static void main(String[] args)
+	{
+		//queuePractice();
+		priorityQueuePractice();
+	}
+	
 	
 	
 	//public static void main(String[] args)
@@ -52,13 +72,6 @@ public class QueuePractice {
 	//	System.out.println(q1.element());
 	}
 	
-	/*
-	
-	public static void main(String[] args)
-	{
-		//queuePractice();
-		priorityQueuePractice();
-	}
-	*/
+
 	
 }

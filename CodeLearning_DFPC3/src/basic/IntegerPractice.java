@@ -4,12 +4,20 @@ public class IntegerPractice {
 
 	public static void main(String[] args)
 	{
-		integerToString();
-
+		//integerToString();
+		negativeInt();
 		
 	}
 	
-	
+	public static void negativeInt()
+	{
+		System.out.println(5/2);
+		System.out.println(-5/2);
+		System.out.println((-5)/2);
+
+
+		
+	}
 	public static void integerToString()
 	{
 		int a = 123;

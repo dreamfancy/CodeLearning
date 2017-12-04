@@ -8,8 +8,10 @@ public class TreeSetPractice {
 
 	public static void main(String[] args)
 	{
-		Set<Integer> treeset = new TreeSet<Integer>();
+		TreeSet<Integer> treeset = new TreeSet<Integer>();
 		
+		System.out.println(treeset.ceiling(4));
+		System.out.println("********");
 		treeset.add(2);
 		treeset.add(1);
 		treeset.add(3);
