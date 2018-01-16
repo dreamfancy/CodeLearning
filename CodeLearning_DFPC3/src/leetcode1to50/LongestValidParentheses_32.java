@@ -57,6 +57,7 @@ public class LongestValidParentheses_32
     		}
     		else
     		{
+    			st.pop();
     			
     			if(st.isEmpty())
     			{

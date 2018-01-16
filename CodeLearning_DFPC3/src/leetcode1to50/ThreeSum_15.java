@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class ThreeSum_15 
 {
-	
+
 	
 	//Official 1
     public List<List<Integer>> threeSum_1(int[] nums) 
@@ -37,7 +37,7 @@ public class ThreeSum_15
     public void twoSum_1(int[] nums, int start, int target, List<List<Integer>> res)
     {
         //Set<Integer> hash = new HashSet<Integer>();
-        Map<Integer,Integer> hash = new HashMap<Integer,Integer>();
+       // Map<Integer,Integer> hash = new HashMap<Integer,Integer>();
     
         int left = start;
         int right = nums.length-1;
